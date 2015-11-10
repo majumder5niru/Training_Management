@@ -20,7 +20,7 @@ Route::get('/trainingId/{id}', 'ViewTraineeReportController@trainer_by_training_
 Route::get('/trainersFeedback/{id}', 'ViewTraineeReportController@trainersFeedback');
 Route::get('admin/yearly_report', 'ViewTraineeReportController@yearly_report');
 
-//Route belongs to SliderController  by polo dev
+//Route belongs to SliderController  
 Route::get('slider/all', 'SliderController@slider_index');
 Route::get('slider/create', 'SliderController@upload_slider_image');
 Route::post('slider/create', 'SliderController@slider_image_store');
@@ -28,17 +28,17 @@ Route::post('slider/{id}/delete', 'SliderController@destroy');
 Route::post('increase_slider_position/{position}', 'SliderController@increase_slider_position');
 Route::post('decrease_slider_position/{position}', 'SliderController@decrease_slider_position');
 
-//Route belongs to BardFrontendController by polo dev
+//Route belongs to BardFrontendController 
 Route::get('/', 'BardFrontendController@index');
 Route::get('/trainingss', 'BardFrontendController@trainings');
 Route::get('/faculty', 'BardFrontendController@faculty');
 Route::get('/about', 'BardFrontendController@about');
 Route::get('yearly_report', 'BardFrontendController@yearly_report');
 
-//Route belongs to BardNewsletterController by polo dev
+//Route belongs to BardNewsletterController 
 Route::get('/clients/create_newsletter', 'BardNewsletterController@create_newsletter');
 Route::post('/clients/create_newsletter', 'BardNewsletterController@newsletter_save_and_send');
-//Route belongs to BardCourseController by polo dev
+//Route belongs to BardCourseController 
 Route::get('/clients', 'BardClientsController@index');
 Route::get('admin/clients', 'BardClientsController@admin_clients');
 Route::get('/clients/create', 'BardClientsController@create');
@@ -47,7 +47,7 @@ Route::get('/clients/{id}', 'BardClientsController@show');
 Route::get('/clients/{id}/edit', 'BardClientsController@edit');
 Route::post('/clients/{id}/edit', 'BardClientsController@update');
 Route::post('/clients/{id}/delete', 'BardClientsController@destroy');
-//UsersController by polo dev
+//UsersController 
 Route::get('/user/registration', 'UsersController@show_user_registration_form');
 Route::post('/user/registration', 'UsersController@store_user_and_assign_role_to_them');
 Route::get('/user/create_user_role', 'UsersController@create_user_role');
@@ -61,10 +61,10 @@ Route::post('/user/search', 'UsersController@user_search');
 //for redirection after login
 Route::get('/redirection_page', 'UsersController@redirection_page');
 
-//route belongs to CoursePublicController by papia
+//route belongs to CoursePublicController 
 Route::get('/public_courses', 'CoursePublicController@index');
 Route::get('/public_courses/{id?}', 'CoursePublicController@show');
-//file created by Shameem
+//file created 
 Route::get('notallowed/{role}', 'UsersController@not_allowed');
 
 //auth route
@@ -77,7 +77,7 @@ Route::controllers([
 
 
 
-//Route belongs to RegistrationController by Hasib
+//Route belongs to RegistrationController 
 Route::resource('registration','RegistrationController');
 Route::resource('calendar','CalenderController');
 Route::resource('exam','ExamController');
@@ -120,7 +120,7 @@ Route::resource('/BARD_book','BookController');
 
 
 
-//Route belongs to HealthController by Sajib
+//Route belongs to HealthController 
 Route::get('/UserHealthCreate', 'HealthController@create');
 Route::post('/UserHealthCreate', 'HealthController@store');
 Route::get('/UserHealthInfos', 'HealthController@index');
@@ -129,9 +129,9 @@ Route::get('/UserHealthInfo/{id?}/edit', 'HealthController@edit');
 Route::post('/UserHealthInfo/{id?}/edit', 'HealthController@update');
 
 
-//route belongs to arif
+
 //for trainings
-//route belongs to TrainingsController by arif
+//route belongs to TrainingsController 
 Route::get('/training_info', 'TrainingsController@training_info');
 Route::post('/training_info', 'TrainingsController@store');
 Route::get('/trainings', 'TrainingsController@index');
@@ -195,7 +195,7 @@ Route::get('/AdminAttendanceShowTrainee/{course_id}/{session_name}/{date}', 'Att
 Route::post('/AdminDateAttendanceView', 'AttendanceController@showDateAdminAttendance');
 Route::get('/DateWiseAttendance/{course_id}/{session_name}/{date}', 'AttendanceController@DateWiseAttendance');
 
-//route belongs to Hasan vai
+
 Route::get('/trainee_create', 'InfosController@create');
 Route::post('/trainee_create', 'InfosController@store');
 Route::get('/trainees', 'InfosController@index');
@@ -216,7 +216,7 @@ Route::get('trainee_profile/{id?}/edit_profile','InfosController@edit_profile');
 Route::post('trainee_profile/{id?}/edit_profile','InfosController@update_profile');
 
 
-//route belongs to TrainersController by Hasan vai
+//route belongs to TrainersController 
 Route::get('/trainer_create', 'TrainersController@create');
 Route::post('/trainer_create', 'TrainersController@store');
 Route::get('/trainers', 'TrainersController@index');
@@ -249,7 +249,7 @@ Route::get('update_info/{id?}/edit_profile','TrainersController@edit_info');
 Route::post('update_info/{id?}/edit_profile','TrainersController@update_info');
 
 
-//for Trainer Profile CRUD in Admin by 5 apaches
+
 
 
 //Route::get('/trainer_create', 'AdminTrainersController@create');
@@ -269,7 +269,7 @@ Route::post('/admin_trainer_show/{id?}/edit','AdminTrainersController@adminUpdat
 
 
 
-//route belongs to ContactController by shamim
+//route belongs to ContactController 
 Route::get('/contact', 'ContactController@showForm');
 Route::post('/contact', 'ContactController@store');
 
@@ -279,7 +279,7 @@ Route::post('/feedbackCreate', 'FeedbacksController@store');
 
 
 
-//route belongs to CourseController by localhost
+//route belongs to CourseController 
 Route::get('/create_course', 'CourseController@create');
 Route::post('/create_course', 'CourseController@store');
 Route::get('/courses', 'CourseController@index');
@@ -290,7 +290,7 @@ Route::post('/courses/{id?}/delete','CourseController@destroy');
 
 
 
-//AdminPanel Demo View With test work(Sajib)
+//AdminPanel Demo View With test work
 Route::get('master', ['middleware'=>'admin',function () {
     return view('admin.layouts.master');
 }]);
@@ -304,7 +304,7 @@ Route::post('/healthCreate', 'AdminController@store');
 Route::get('/adminHealthInfos', 'AdminController@index');
 
 
-//attendance by 5 apaches
+
 
 //Route::get('/UserHealthCreate', 'AdminController@create');
 //Route::post('/UserHealthCreate', 'AdminController@store');
@@ -328,17 +328,17 @@ Route::get('/bardtrainer_show/{id?}/delete','BardTrainersController@destroy');
     return view(('bardtrainer'));
 });
 });*/
-//routes by nirupam
+
 
 Route::get('/show_trainee_list/{course_id}','AdminController@trainees_by_course_id');
 Route::get('/trainee_view/{trainee_id?}', 'AdminController@trainee_by_user_id');
 
-//by tahmina for trainer
+
 Route::resource('/exam_create','ExamController@create');
 
 //Route::get('/notallowed/{role?}','');
 
-// Image gallery by tahmina
+
 Route::get('/gallery','GalleryController@gallery');
 Route::get('/gallery/img','GalleryController@img');
 Route::get('/gallery/cafeteria','GalleryController@cafeteria');
@@ -346,7 +346,7 @@ Route::get('/gallery/tour','GalleryController@tour');
 Route::get('/gallery/site','GalleryController@site');
 Route::get('/gallery/traininging','GalleryController@traininging');
 Route::get('/gallery/program','GalleryController@program');
-//for course resourses by papia
+
 Route::get('/resources','CourseResourcesController@create');
 Route::post('/resources','CourseResourcesController@store');
 Route::get('/allresources','CourseResourcesController@index');
@@ -363,7 +363,7 @@ Route::get('aboutus',function(){
     return view('aboutus.functionss');
 });
 
-//route dfor forum by sanjida
+
 Route::get('/forums', 'ForumController@forums');
 Route::get('/forum_create', 'ForumController@create');
 Route::post('/forum_create', 'ForumController@store');
